@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Karawang — Panduan Wisata Lengkap</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --sand: #E8DFC8;
+  --terracotta: #C4622D;
+  --terracotta-light: #E8845A;
+  --forest: #2D5016;
+  --forest-mid: #3D6B20;
+  --forest-light: #6B9E3A;
+  --ocean: #1B4F72;
+  --ocean-mid: #2874A6;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --text-dark: #1A1208;
+  --text-mid: #3D3020;
+  --text-light: #6B5E4A;
+  --white: #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #0a1a05 0%, #1a3a0a 40%, #2D5016 70%, #3D6B20 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(196,98,45,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(201,168,76,0.15) 0%, transparent 50%);
+}
+
+.hero-bg-text {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(120px, 25vw, 280px);
+  font-weight: 900;
+  color: rgba(255,255,255,0.04);
+  letter-spacing: -0.02em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.2);
+  border: 1px solid rgba(201,168,76,0.5);
+  color: var(--gold-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.0;
+  margin-bottom: 0.3em;
+}
+
+.hero h1 span {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── NAV PILLS ── */
+.nav-pills {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245,240,232,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 0.85rem 2rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-pill {
+  text-decoration: none;
+  color: var(--text-mid);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.45rem 1.1rem;
+  border-radius: 100px;
+  border: 1.5px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav-pill:hover { background: var(--terracotta); color: white; border-color: var(--terracotta); }
+
+/* ── SECTIONS ── */
+.section {
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.section-title em { color: var(--terracotta); font-style: italic; }
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  max-width: 680px;
+}
+
+/* ── LATAR BELAKANG ── */
+.latar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.latar-text p {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+
+.latar-visual {
+  background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 50%, var(--forest-light) 100%);
+  border-radius: 24px;
+  padding: 2.5rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.latar-visual::before {
+  content: '🌿';
+  position: absolute;
+  font-size: 8rem;
+  right: -1rem;
+  bottom: -1rem;
+  opacity: 0.15;
+}
+
+.latar-visual h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+}
+
+.fact-item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.fact-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+/* ── TUJUAN MANFAAT ── */
+.tujuan-bg {
+  background: var(--text-dark);
+  padding: 6rem 2rem;
+}
+
+.tujuan-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tujuan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.tujuan-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.tujuan-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.08);
+}
+
+.tujuan-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.tujuan-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  margin-bottom: 0.8rem;
+}
+
+.tujuan-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+}
+
+/* ── WISATA CATEGORIES ── */
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--sand);
+}
+
+.cat-icon-big { font-size: 2.5rem; }
+
+.cat-header-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+}
+
+.cat-header-text p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.2rem;
+}
+
+/* Destination Cards */
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.dest-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+}
+
+.dest-card-img {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dest-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dest-card-body { padding: 1.4rem; }
+
+.dest-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.dest-card .location {
+  font-size: 0.75rem;
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dest-card p {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.dest-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: var(--sand);
+  color: var(--text-mid);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+}
+
+/* Nature */
+.dest-card.nature .dest-card-img { background: #1a1a1a; }
+/* History */
+.dest-card.history .dest-card-img { background: #1a1a1a; }
+/* Family */
+.dest-card.family .dest-card-img { background: #1a1a1a; }
+/* Religi */
+.dest-card.religi .dest-card-img { background: #1a1a1a; }
+
+/* ── KULINER SECTION ── */
+.kuliner-bg {
+  background: linear-gradient(135deg, var(--terracotta) 0%, #A0451F 100%);
+  padding: 6rem 2rem;
+}
+
+.kuliner-inner { max-width: 1100px; margin: 0 auto; }
+
+.kuliner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+.kuliner-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.kuliner-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.18);
+}
+
+.kuliner-emoji { font-size: 2.5rem; margin-bottom: 0.8rem; display: block; }
+
+.kuliner-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.kuliner-card p { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+/* ── TIPS SECTION ── */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.tip-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem;
+  border-left: 4px solid var(--forest-light);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+.tip-card h4 {
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tip-card p { font-size: 0.875rem; color: var(--text-light); line-height: 1.7; }
+
+/* ── AI TECH SECTION ── */
+.ai-bg {
+  background: linear-gradient(135deg, #0a0e1a 0%, #0d1f3c 50%, #1B4F72 100%);
+  padding: 6rem 2rem;
+}
+
+.ai-inner { max-width: 1100px; margin: 0 auto; }
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.ai-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(100,180,255,0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.ai-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(100,180,255,0.35);
+  background: rgba(255,255,255,0.08);
+}
+
+.ai-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(100,180,255,0.25);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.ai-card h4 {
+  font-weight: 700;
+  color: rgba(150,200,255,0.9);
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+}
+
+.ai-card p { font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+/* ── REFERENSI ── */
+.ref-list {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.ref-list li {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 0.6rem;
+  background: white;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  border-left: 3px solid var(--gold);
+}
+
+.ref-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  min-width: 1.5rem;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--text-dark);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+footer strong { color: var(--gold-light); }
+
+/* ── DIVIDERS ── */
+.wave-divider {
+  height: 60px;
+  background: var(--cream);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .latar-grid { grid-template-columns: 1fr; }
+  .tujuan-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-text">KARAWANG</div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Panduan Wisata Digital ✦</div>
+    <h1>Explore<br><span>Karawang</span></h1>
+    <p class="hero-sub">Dari pantai tersembunyi, situs bersejarah kemerdekaan, hingga pegunungan yang memukau — semua ada di Karawang.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">20+</span>
+        <span class="hero-stat-label">Destinasi Wisata</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">5</span>
+        <span class="hero-stat-label">Kategori Wisata</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">10+</span>
+        <span class="hero-stat-label">Kuliner Khas</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">1</span>
+        <span class="hero-stat-label">Kota Penuh Kejutan</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">Scroll</div>
+</section>
+
+<!-- NAV PILLS -->
+<nav class="nav-pills">
+  <a href="#latar" class="nav-pill">Latar Belakang</a>
+  <a href="#tujuan" class="nav-pill">Tujuan & Manfaat</a>
+  <a href="#alam" class="nav-pill">🌿 Wisata Alam</a>
+  <a href="#sejarah" class="nav-pill">🏛️ Sejarah</a>
+  <a href="#keluarga" class="nav-pill">🎡 Keluarga</a>
+  <a href="#religi" class="nav-pill">🕌 Religi</a>
+  <a href="#kuliner" class="nav-pill">🍽️ Kuliner</a>
+  <a href="#tips" class="nav-pill">💡 Tips</a>
+  <a href="#teknologi" class="nav-pill">🤖 AI & Teknologi</a>
+  <a href="#referensi" class="nav-pill">📚 Referensi</a>
+</nav>
+
+<!-- LATAR BELAKANG -->
+<section class="section" id="latar">
+  <div class="section-label">01 — Pendahuluan</div>
+  <h2 class="section-title">Latar <em>Belakang</em></h2>
+  <div class="latar-grid">
+    <div class="latar-text">
+      <p>Karawang selama ini dikenal luas sebagai kota industri terbesar di Indonesia, dengan deretan kawasan pabrik dan pergudangan yang mendominasi lanskap kotanya. Namun di balik citra industrialnya yang kuat, Karawang menyimpan kekayaan potensi wisata yang belum banyak dikenal publik luas.</p>
+      <p>Mulai dari wisata alam seperti pantai, curug, dan pegunungan, hingga wisata sejarah yang erat kaitannya dengan peristiwa Proklamasi Kemerdekaan Indonesia — Karawang memiliki segalanya. Bahkan, Situs Batujaya yang berlokasi di Karawang merupakan kompleks candi Buddha tertua yang pernah ditemukan di Indonesia.</p>
+      <p>Sayangnya, potensi besar ini belum terpromosikan secara optimal. Di era digital saat ini, pemanfaatan teknologi informasi dan kecerdasan buatan (AI) menjadi kunci untuk menjangkau wisatawan yang lebih luas dan memperkenalkan keindahan Karawang kepada dunia.</p>
+      <p>Project ini hadir sebagai panduan wisata digital yang komprehensif, bertujuan untuk mengangkat citra Karawang tidak hanya sebagai kota industri, tetapi juga sebagai destinasi wisata yang kaya dan berpotensi besar.</p>
+    </div>
+    <div class="latar-visual">
+      <h3>"Kota Industri dengan Sejuta Pesona Tersembunyi"</h3>
+      <div class="fact-item"><span class="fact-icon">📍</span><span>Terletak strategis antara Jakarta dan Bandung, ±60 km dari Ibu Kota</span></div>
+      <div class="fact-item"><span class="fact-icon">🏭</span><span>Dikenal sebagai pusat industri terbesar Asia Tenggara</span></div>
+      <div class="fact-item"><span class="fact-icon">🏛️</span><span>Memiliki peran historis penting dalam Proklamasi Kemerdekaan RI</span></div>
+      <div class="fact-item"><span class="fact-icon">🌿</span><span>Memiliki lebih dari 20 destinasi wisata alam, sejarah, dan budaya</span></div>
+      <div class="fact-item"><span class="fact-icon">🏄</span><span>Garis pantai sepanjang ±84 km di pesisir utara Jawa</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TUJUAN & MANFAAT -->
+<div class="tujuan-bg" id="tujuan">
+  <div class="tujuan-inner">
+    <div class="section-label" style="color: var(--gold-light);">02 — Akademik</div>
+    <h2 class="section-title" style="color: white;">Tujuan & <em style="color:var(--gold-light);">Manfaat</em></h2>
+    <p class="section-desc" style="color: rgba(255,255,255,0.6);">Project ini disusun dengan tujuan yang jelas untuk memberikan kontribusi nyata bagi pengembangan pariwisata Karawang secara digital.</p>
+    <div class="tujuan-grid">
+      <div class="tujuan-card">
+        <span class="tujuan-icon">🗺️</span>
+        <h4>Memperkenalkan Potensi Wisata</h4>
+        <p>Memberikan informasi lengkap dan akurat tentang destinasi wisata Karawang kepada masyarakat luar daerah yang belum mengenal Karawang sebagai tujuan wisata.</p>
+      </div>
+      <div class="tujuan-card">
+        <span class="tujuan-icon">📈</span>
+        <h4>Mendorong Kunjungan Wisatawan</h4>
+        <p>Meningkatkan angka kunjungan wisatawan domestik maupun mancanegara ke Karawang melalui promosi digital yang menarik dan mudah diakses.</p>
+      </div>
+      <div class="tujuan-card">
+        <span class="tujuan-icon">🤝</span>
+        <h4>Mendukung Ekonomi Lokal</h4>
+        <p>Membantu mempromosikan UMKM, kuliner lokal, dan pelaku usaha wisata di Karawang agar dapat menjangkau pasar yang lebih luas.</p>
+      </div>
+      <div class="tujuan-card">
+        <span class="tujuan-icon">💡</span>
+        <h4>Referensi Digital Wisatawan</h4>
+        <p>Menjadi panduan digital yang komprehensif dan terpercaya bagi wisatawan yang berencana mengunjungi Karawang.</p>
+      </div>
+      <div class="tujuan-card">
+        <span class="tujuan-icon">🌱</span>
+        <h4>Melestarikan Budaya & Sejarah</h4>
+        <p>Mengedukasi masyarakat tentang nilai sejarah dan budaya Karawang agar warisan leluhur tetap dikenal dan dilestarikan oleh generasi muda.</p>
+      </div>
+      <div class="tujuan-card">
+        <span class="tujuan-icon">🤖</span>
+        <h4>Integrasi Teknologi & AI</h4>
+        <p>Menunjukkan pemanfaatan teknologi digital dan kecerdasan buatan dalam pengembangan dan promosi sektor pariwisata daerah.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WISATA ALAM -->
+<section class="section" id="alam">
+  <div class="section-label">03 — Hasil & Pembahasan</div>
+  <h2 class="section-title">Wisata <em>Alam</em></h2>
+  <p class="section-desc">Karawang memiliki garis pantai sepanjang ±84 km di utara, serta kawasan pegunungan Sanggabuana di selatan. Keduanya menawarkan pengalaman alam yang berbeda namun sama-sama memukau.</p>
+
+  <div class="cat-header" style="margin-top:2.5rem;">
+    <span class="cat-icon-big">🏖️</span>
+    <div class="cat-header-text">
+      <h3>Pantai & Pesisir</h3>
+      <p>Pantai-pantai di Karawang masih alami dan belum terlalu ramai</p>
+    </div>
+  </div>
+  <div class="dest-grid">
+    <div class="dest-card nature">
+      <div class="dest-card-img"><img src="images/Pantai Tanjung Pakis.jpg" alt="Pantai Tanjung Pakis"></div>
+      <div class="dest-card-body">
+        <h4>Pantai Tanjung Pakis</h4>
+        <div class="location">📍 Pakisjaya, Karawang</div>
+        <p>Pantai landai dengan pasir putih kecoklatan, cocok untuk camping tepi pantai dan menikmati sunrise yang spektakuler. Salah satu pantai paling populer di Karawang.</p>
+        <div class="dest-card-tags">
+          <span class="tag">Camping</span>
+          <span class="tag">Sunrise</span>
+          <span class="tag">Keluarga</span>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card nature">
+      <div class="dest-card-img"><img src="images/Pantai Pisangan.jpg" alt="Pantai Pisangan"></div>
+      <div class="dest-card-body">
+        <h4>Pantai Pisangan</h4>
+        <div class="location">📍 Pakisjaya, Karawang</div>
+        <p>Pantai yang masih sangat alami dan sepi, ideal untuk para pencari ketenangan dan spot foto yang belum banyak diketahui orang. Cocok untuk wisata slow travel.</p>
+        <div class="dest-card-tags">
+          <span class="tag">Hidden Gem</span>
+          <span class="tag">Foto</span>
+          <span class="tag">Sepi</span>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card nature">
+      <div class="dest-card-img"><img src="images/Danau Cipule.jpg" alt="Danau Cipule"></div>
+      <div class="dest-card-body">
+        <h4>Danau Cipule</h4>
+        <div class="location">📍 Ciampel, Karawang</div>
+        <p>Danau buatan dengan pemandangan hijau yang sejuk. Terkenal sebagai venue olahraga dayung dan sering digunakan untuk pertandingan tingkat nasional.</p>
+        <div class="dest-card-tags">
+          <span class="tag">Olahraga Air</span>
+          <span class="tag">Sejuk</span>
+          <span class="tag">Foto</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-header">
+    <span class="cat-icon-big">🌲</span>
+    <div class="cat-header-text">
+      <h3>Curug & Pegunungan</h3>
+      <p>Kawasan Tegalwaru menyimpan banyak air terjun tersembunyi</p>
+    </div>
+  </div>
+  <div class="dest-grid">
+    <div class="dest-card nature">
+      <div class="dest-card-img"><img src="images/Curug Cipanundaan.jpg" alt="Curug Cipanundaan"></div>
+      <div class="dest-card-body">
+        <h4>Curug Cipanundaan</h4>
+        <div class="location">📍 Tegalwaru, Karawang</div>
+        <p>Air terjun tersembunyi di dalam hutan yang masih sangat alami. Perjalanan menuju lokasi melewati jalur trekking yang menantang dan menyenangkan bagi pecinta alam.</p>
+        <div class="dest-card-tags">
+          <span class="tag">Trekking</span>
+          <span class="tag">Air Terjun</span>
+          <span class="tag">Alam Liar</span>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card nature">
+      <div class="dest-card-img"><img src="images/Curug Lalay.jpg" alt="Curug Santri"></div>
+      <div class="dest-card-body">
+        <h4>Curug Santri</h4>
+        <div class="location">📍 Tegalwaru, Karawang</div>
+        <p>Perpaduan unik antara wisata alam dan wisata religi. Air terjun yang dikelilingi suasana spiritual, sering dikunjungi para peziarah sekaligus pencinta alam.</p>
+        <div class="dest-card-tags">
+          <span class="tag">Religi</span>
+          <span class="tag">Air Terjun</span>
+          <span class="tag">Unik</span>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card nature">
+      <div class="dest-card-img"><img src="images/Gunung Sanggabuana.jpg" alt="Gunung Sanggabuana"></div>
+      <div class="dest-card-body">
+        <h4>Gunung Sanggabuana</h4>
+        <div class="location">📍 Tegalwaru, Karawang</div>
+        <p>Destinasi hiking favorit warga Karawang. Dari puncaknya, pengunjung dapat menikmati pemandangan seluruh wilayah Karawang hingga ke pesisir utara Jawa.</p>
+        <div class="dest-card-tags">
+          <span class="tag">Hiking</span>
+          <span class="tag">Panorama</span>
+          <span class="tag">Petualangan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WISATA SEJARAH -->
+<section class="section" id="sejarah" style="padding-top:0;">
+  <div class="section-label">03 — Hasil & Pembahasan</div>
+  <h2 class="section-title">Wisata <em>Sejarah & Budaya</em></h2>
+  <p class="section-desc">Karawang memiliki peran yang sangat signifikan dalam sejarah kemerdekaan Indonesia. Peristiwa Rengasdengklok, yang menentukan tanggal Proklamasi Kemerdekaan, terjadi di tanah Karawang.</p>
+
+  <div class="dest-grid" style="margin-top:2.5rem;">
+    <div class="dest-card history">
+      <div class="dest-card-img"><img src="images/Tugu Proklamasi Rengasdengklok.jpg" alt="Tugu Proklamasi Rengasdengklok"></div>
+      <div class="dest-card-body">
+        <h4>Tugu Proklamasi Rengasdengklok</h4>
+        <div class="location">📍 Rengasdengklok, Karawang</div>
+        <p>Monumen bersejarah yang menandai peristiwa penculikan Soekarno-Hatta oleh pemuda pada 15 Agustus 1945 — peristiwa yang mempercepat Proklamasi Kemerdekaan RI.</p>
+        <div class="dest-card-tags"><span class="tag">Sejarah</span><span class="tag">Edukasi</span><span class="tag">Proklamasi</span></div>
+      </div>
+    </div>
+    <div class="dest-card history">
+      <div class="dest-card-img"><img src="images/Rumah Soekarno.jpg" alt="Rumah Bung Karno"></div>
+      <div class="dest-card-body">
+        <h4>Rumah Bung Karno</h4>
+        <div class="location">📍 Rengasdengklok, Karawang</div>
+        <p>Rumah bersejarah tempat Soekarno dan Hatta diamankan oleh para pemuda sebelum Proklamasi dikumandangkan. Kini menjadi museum dan situs cagar budaya.</p>
+        <div class="dest-card-tags"><span class="tag">Museum</span><span class="tag">Cagar Budaya</span><span class="tag">Proklamasi</span></div>
+      </div>
+    </div>
+    <div class="dest-card history">
+      <div class="dest-card-img"><img src="images/Monumen Rawa Gede.jpg" alt="Monumen Rawa Gede"></div>
+      <div class="dest-card-body">
+        <h4>Monumen Rawa Gede</h4>
+        <div class="location">📍 Rawamerta, Karawang</div>
+        <p>Situs peringatan tragedi pembantaian rakyat Karawang oleh tentara Belanda pada 1947 yang menewaskan ratusan warga sipil. Diakui secara internasional oleh pengadilan Belanda.</p>
+        <div class="dest-card-tags"><span class="tag">Sejarah</span><span class="tag">Memorial</span><span class="tag">Edukasi</span></div>
+      </div>
+    </div>
+    <div class="dest-card history">
+      <div class="dest-card-img"><img src="images/Candi Jiwa.jpg" alt="Situs Batujaya"></div>
+      <div class="dest-card-body">
+        <h4>Situs Batujaya</h4>
+        <div class="location">📍 Batujaya, Karawang</div>
+        <p>Kompleks candi Buddha tertua di Indonesia, diperkirakan berasal dari abad ke-4 hingga ke-7 Masehi. Merupakan penemuan arkeologi paling signifikan di Jawa Barat.</p>
+        <div class="dest-card-tags"><span class="tag">Arkeologi</span><span class="tag">Candi Tertua</span><span class="tag">UNESCO</span></div>
+      </div>
+    </div>
+    <div class="dest-card history">
+      <div class="dest-card-img"><img src="images/Gedung Juang 45.jpg" alt="Gedung Juang 45"></div>
+      <div class="dest-card-body">
+        <h4>Gedung Juang 45</h4>
+        <div class="location">📍 Kota Karawang</div>
+        <p>Bangunan bersejarah yang menjadi pusat kegiatan perjuangan kemerdekaan Karawang. Kini berfungsi sebagai museum dan pusat kebudayaan kota.</p>
+        <div class="dest-card-tags"><span class="tag">Museum</span><span class="tag">Perjuangan</span><span class="tag">Budaya</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WISATA KELUARGA -->
+<section class="section" id="keluarga" style="padding-top:0;">
+  <div class="section-label">03 — Hasil & Pembahasan</div>
+  <h2 class="section-title">Wisata <em>Edukasi & Keluarga</em></h2>
+  <p class="section-desc">Berbagai pilihan wisata keluarga yang menyenangkan sekaligus edukatif tersedia di Karawang, cocok untuk liburan bersama anak-anak dan remaja.</p>
+
+  <div class="dest-grid" style="margin-top:2.5rem;">
+    <div class="dest-card family">
+      <div class="dest-card-img"><img src="images/The Lawu Park.jpg" alt="The Lawu Park"></div>
+      <div class="dest-card-body">
+        <h4>The Lawu Park</h4>
+        <div class="location">📍 Tegalwaru, Karawang</div>
+        <p>Destinasi glamping dan outbound di kaki Gunung Sanggabuana. Cocok untuk liburan keluarga dengan suasana pegunungan yang sejuk dan fasilitas modern.</p>
+        <div class="dest-card-tags"><span class="tag">Glamping</span><span class="tag">Outbound</span><span class="tag">Keluarga</span></div>
+      </div>
+    </div>
+    <div class="dest-card family">
+      <div class="dest-card-img"><img src="images/Wonderland Waterpark Karawang.jpg" alt="Karawang Waterpark"></div>
+      <div class="dest-card-body">
+        <h4>Karawang Waterpark</h4>
+        <div class="location">📍 Kota Karawang</div>
+        <p>Taman air terlengkap di Karawang dengan berbagai wahana seru untuk anak-anak dan dewasa. Pilihan hiburan keluarga yang tidak perlu jauh-jauh keluar kota.</p>
+        <div class="dest-card-tags"><span class="tag">Wahana Air</span><span class="tag">Anak-anak</span><span class="tag">Seru</span></div>
+      </div>
+    </div>
+    <div class="dest-card family">
+      <div class="dest-card-img"><img src="images/Kebun Strawberry Tegalwaru.jpg" alt="Kebun Strawberry Tegalwaru"></div>
+      <div class="dest-card-body">
+        <h4>Kebun Strawberry Tegalwaru</h4>
+        <div class="location">📍 Tegalwaru, Karawang</div>
+        <p>Agrowisata petik buah strawberry langsung dari kebunnya. Pengalaman edukatif yang menyenangkan bagi anak-anak untuk mengenal pertanian secara langsung.</p>
+        <div class="dest-card-tags"><span class="tag">Agrowisata</span><span class="tag">Edukasi</span><span class="tag">Petik Buah</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WISATA RELIGI -->
+<section class="section" id="religi" style="padding-top:0;">
+  <div class="section-label">03 — Hasil & Pembahasan</div>
+  <h2 class="section-title">Wisata <em>Religi</em></h2>
+  <p class="section-desc">Karawang merupakan salah satu pusat penyebaran Islam di tanah Sunda. Makam-makam tokoh penyebar Islam menjadi tujuan ziarah yang ramai dikunjungi.</p>
+
+  <div class="dest-grid" style="margin-top:2.5rem;">
+    <div class="dest-card religi">
+      <div class="dest-card-img"><img src="images/Makam Syech Quro.jpg" alt="Makam Syekh Quro"></div>
+      <div class="dest-card-body">
+        <h4>Makam Syekh Quro</h4>
+        <div class="location">📍 Lemahabang, Karawang</div>
+        <p>Makam Syekh Hasanudin atau Syekh Quro, ulama penyebar Islam pertama di Karawang yang berasal dari Campa (kini Vietnam). Menjadi destinasi ziarah utama di Karawang.</p>
+        <div class="dest-card-tags"><span class="tag">Ziarah</span><span class="tag">Sejarah Islam</span><span class="tag">Spiritual</span></div>
+      </div>
+    </div>
+    <div class="dest-card religi">
+      <div class="dest-card-img"><img src="images/Makam Syech Bentong.jpg" alt="Makam Syekh Bentong"></div>
+      <div class="dest-card-body">
+        <h4>Makam Syekh Bentong</h4>
+        <div class="location">📍 Rengasdengklok, Karawang</div>
+        <p>Makam tokoh penyebar Islam di wilayah Rengasdengklok yang dikeramatkan. Sering dikunjungi para peziarah yang mencari berkah, terutama pada malam Jumat.</p>
+        <div class="dest-card-tags"><span class="tag">Ziarah</span><span class="tag">Keramat</span><span class="tag">Spiritual</span></div>
+      </div>
+    </div>
+    <div class="dest-card religi">
+      <div class="dest-card-img"><img src="images/Masjid Agung Karawang.jpg" alt="Masjid Agung Karawang"></div>
+      <div class="dest-card-body">
+        <h4>Masjid Agung Karawang</h4>
+        <div class="location">📍 Pusat Kota Karawang</div>
+        <p>Masjid bersejarah yang menjadi ikon pusat kota Karawang. Arsitekturnya yang khas menjadikannya tidak hanya sebagai tempat ibadah tetapi juga destinasi wisata religi.</p>
+        <div class="dest-card-tags"><span class="tag">Ibadah</span><span class="tag">Arsitektur</span><span class="tag">Ikon Kota</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KULINER -->
+<div class="kuliner-bg" id="kuliner">
+  <div class="kuliner-inner">
+    <div class="section-label" style="color: rgba(255,255,255,0.6);">04 — Hasil & Pembahasan</div>
+    <h2 class="section-title" style="color:white;">Kuliner <em style="color:var(--gold-light);">Khas Karawang</em></h2>
+    <p class="section-desc" style="color:rgba(255,255,255,0.7);">Wisata kuliner di Karawang menawarkan cita rasa khas Sunda pesisir yang tidak akan mudah ditemukan di tempat lain. Jangan lewatkan ini saat berkunjung!</p>
+    <div class="kuliner-grid">
+      <div class="kuliner-card">
+        <span class="kuliner-emoji">🍲</span>
+        <h4>Soto Karawang</h4>
+        <p>Soto dengan kuah bening khas yang berbeda dari soto daerah lain. Menggunakan rempah khas Karawang dengan cita rasa yang ringan namun kaya aroma.</p>
+      </div>
+      <div class="kuliner-card">
+        <span class="kuliner-emoji">🐟</span>
+        <h4>Pepes Peda</h4>
+        <p>Ikan peda yang dimasak dengan cara dipepes menggunakan bumbu rempah khas. Kuliner pesisir yang menjadi kebanggaan warga Karawang sejak turun-temurun.</p>
+      </div>
+      <div class="kuliner-card">
+        <span class="kuliner-emoji">🥬</span>
+        <h4>Ulukutek Leunca</h4>
+        <p>Masakan Sunda khas pedesaan Karawang berbahan dasar leunca (terong pipit) yang dimasak dengan bumbu tempe dan teri. Sederhana namun sangat lezat.</p>
+      </div>
+      <div class="kuliner-card">
+        <span class="kuliner-emoji">🔥</span>
+        <h4>Ikan Bakar Tanjung Pakis</h4>
+        <p>Ikan bakar segar langsung dari nelayan di Pantai Tanjung Pakis. Disajikan dengan sambal khas dan lalapan segar, cocok dinikmati sambil melihat laut.</p>
+      </div>
+      <div class="kuliner-card">
+        <span class="kuliner-emoji">🍮</span>
+        <h4>Kue Cucur</h4>
+        <p>Jajanan pasar tradisional khas Karawang yang terbuat dari tepung beras dan gula merah. Teksturnya yang kenyal di tengah dan renyah di tepi menjadi ciri khasnya.</p>
+      </div>
+      <div class="kuliner-card">
+        <span class="kuliner-emoji">🎁</span>
+        <h4>Mochi Karawang</h4>
+        <p>Oleh-oleh khas yang mulai populer di kalangan wisatawan. Hadir dalam berbagai rasa modern yang memadukan cita rasa tradisional dengan sentuhan kekinian.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<section class="section" id="tips">
+  <div class="section-label">05 — Panduan Praktis</div>
+  <h2 class="section-title">Tips <em>Perjalanan</em></h2>
+  <p class="section-desc">Informasi praktis yang perlu kamu ketahui sebelum mengunjungi Karawang agar perjalananmu lebih nyaman dan menyenangkan.</p>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <h4>🗓️ Waktu Terbaik Berkunjung</h4>
+      <p>Musim kemarau (April–Oktober) adalah waktu terbaik untuk mengunjungi Karawang. Untuk pantai, datanglah pagi hari (05.00–08.00) untuk menikmati sunrise terbaik.</p>
+    </div>
+    <div class="tip-card">
+      <h4>🚗 Akses Transportasi</h4>
+      <p>Dari Jakarta: tol Cikampek ±1–1,5 jam. Via KRL Commuter Line turun di Stasiun Karawang. Bus AKAP dari Terminal Pulogadung tersedia setiap hari.</p>
+    </div>
+    <div class="tip-card">
+      <h4>💰 Estimasi Biaya</h4>
+      <p>Budget harian rata-rata Rp 150.000–300.000/orang sudah mencakup tiket masuk, makan, dan transport lokal. Penginapan tersedia mulai Rp 150.000/malam.</p>
+    </div>
+    <div class="tip-card">
+      <h4>🏨 Penginapan</h4>
+      <p>Tersedia berbagai pilihan dari hotel bintang di pusat kota hingga homestay dan glamping di kawasan Tegalwaru. Booking jauh-jauh hari untuk musim liburan.</p>
+    </div>
+    <div class="tip-card">
+      <h4>📱 Aplikasi Berguna</h4>
+      <p>Google Maps (navigasi), Traveloka (hotel), Gojek/Grab (transportasi lokal), dan Instagram untuk referensi spot foto terkini dari wisatawan lain.</p>
+    </div>
+    <div class="tip-card">
+      <h4>⚠️ Hal yang Perlu Diperhatikan</h4>
+      <p>Bawa sunscreen untuk wisata pantai. Siapkan uang tunai untuk daerah terpencil. Hormati situs sejarah dan makam ziarah. Jaga kebersihan lingkungan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AI & TEKNOLOGI -->
+<div class="ai-bg" id="teknologi">
+  <div class="ai-inner">
+    <div class="section-label" style="color:rgba(150,200,255,0.6);">06 — Inovasi Digital</div>
+    <h2 class="section-title" style="color:white;">Peran <em style="color:rgba(150,200,255,0.9);">AI & Teknologi</em></h2>
+    <p class="section-desc" style="color:rgba(255,255,255,0.55);">Teknologi kecerdasan buatan dan digitalisasi membuka peluang besar bagi pengembangan pariwisata Karawang untuk menjangkau wisatawan lebih luas secara efisien.</p>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <div class="ai-num">01</div>
+        <h4>AI Recommendation System</h4>
+        <p>Platform seperti Google Maps dan TripAdvisor menggunakan algoritma AI untuk merekomendasikan destinasi wisata Karawang kepada pengguna berdasarkan preferensi dan riwayat kunjungan.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ai-num">02</div>
+        <h4>Social Media Algorithm</h4>
+        <p>Algoritma Instagram, TikTok, dan YouTube secara otomatis mendistribusikan konten wisata Karawang kepada audiens yang relevan, memperluas jangkauan promosi secara organik.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ai-num">03</div>
+        <h4>Drone & Aerial Photography</h4>
+        <p>Teknologi drone memungkinkan dokumentasi destinasi wisata Karawang dari sudut pandang udara yang spektakuler, menghasilkan konten promosi yang viral dan menarik perhatian wisatawan.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ai-num">04</div>
+        <h4>Digital Tourism App</h4>
+        <p>Potensi pengembangan aplikasi wisata berbasis AI khusus Karawang yang dapat memberikan panduan perjalanan, rekomendasi real-time, dan informasi tiket secara terintegrasi.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ai-num">05</div>
+        <h4>Big Data & Analytics</h4>
+        <p>Pemanfaatan data kunjungan wisatawan untuk menganalisis pola perjalanan, musim puncak kunjungan, dan preferensi wisatawan guna meningkatkan kualitas layanan pariwisata.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ai-num">06</div>
+        <h4>Virtual Tour & AR</h4>
+        <p>Teknologi Virtual Reality dan Augmented Reality memungkinkan wisatawan menjelajahi destinasi Karawang secara virtual sebelum berkunjung secara langsung.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REFERENSI -->
+<section class="section" id="referensi">
+  <div class="section-label">07 — Studi Literatur</div>
+  <h2 class="section-title">Bukti Studi <em>Literatur</em></h2>
+  <p class="section-desc">Seluruh data dan informasi dalam project ini bersumber dari referensi yang dapat diverifikasi dan terpercaya.</p>
+  <ul class="ref-list">
+    <li><span class="ref-num">1</span>Dinas Pariwisata Karawang. (2023). <em>Data Potensi Wisata Kabupaten Karawang.</em> Pemerintah Kabupaten Karawang. karawangkab.go.id</li>
+    <li><span class="ref-num">2</span>Badan Pusat Statistik Karawang. (2023). <em>Karawang Dalam Angka 2023 — Statistik Pariwisata.</em> BPS Kabupaten Karawang.</li>
+    <li><span class="ref-num">3</span>Kementerian Pendidikan & Kebudayaan RI. (2022). <em>Situs Batujaya: Kompleks Percandian Buddha Tertua di Indonesia.</em> kebudayaan.kemdikbud.go.id</li>
+    <li><span class="ref-num">4</span>Komite Nasional Indonesia untuk UNESCO. (2021). <em>Warisan Budaya Tak Benda Indonesia: Karawang.</em> Kemendikbud RI.</li>
+    <li><span class="ref-num">5</span>Google Maps. (2024). <em>User Reviews & Ratings — Destinasi Wisata Karawang.</em> maps.google.com</li>
+    <li><span class="ref-num">6</span>Prasetyo, A. & Widiastuti, R. (2022). <em>Potensi Pengembangan Pariwisata Berbasis Digital di Kabupaten Karawang.</em> Jurnal Kepariwisataan Indonesia, 16(2), 88–104.</li>
+    <li><span class="ref-num">7</span>World Economic Forum. (2023). <em>The Role of AI in Transforming Tourism and Hospitality Industry.</em> weforum.org</li>
+    <li><span class="ref-num">8</span>Tempo.co & Kompas.com. (2023–2024). <em>Berbagai artikel liputan wisata Karawang.</em> tempo.co / kompas.com</li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-family:'Playfair Display',serif; font-size:1.8rem; color:rgba(255,255,255,0.8); margin-bottom:1rem; font-style:italic;">Explore Karawang</div>
+  <p>Project UAS — Pengenalan Pariwisata Daerah Karawang Berbasis Teknologi Digital</p>
+  <p style="margin-top:0.5rem;">Dibuat untuk memperkenalkan potensi wisata <strong>Kabupaten Karawang</strong> kepada masyarakat luas</p>
+  <p style="margin-top:1.5rem; font-size:0.75rem; opacity:0.4;">© 2025 Explore Karawang — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
